@@ -11,11 +11,11 @@ print("------------------TO-DO LIST--------------------")
 def todo_list():
     tasks = []
 
-    def add_task(description):
+    def add_task(description):#function for adding task
         tasks.append({"description": description, "completed": False})
         print(f"Task '{description}' added.")
 
-    def view_tasks():
+    def view_tasks():#function for viewing purpose
         if not tasks:
             print("No tasks found.")
         else:
@@ -24,7 +24,7 @@ def todo_list():
                 status = "Done" if task["completed"] else "Pending"
                 print(f"{i}. {task['description']} [{status}]")
 
-    def update_task(index, new_description=None):
+    def update_task(index, new_description=None):#function to update the task
         if 0 < index <= len(tasks):
             if new_description:
                 tasks[index - 1]["description"] = new_description
