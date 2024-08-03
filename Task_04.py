@@ -12,42 +12,54 @@
 #     "p" for paper i.e -1
 #     "c" for scissor i.e 0
 
+#update in structure of code----> the main body of code is written in a function thich will run in a conditional loop (depending upon the choine of user to play it again or not)
+
 import random
-
-computer = random.choice([-1,0,1])
-print("please press :\ns for stone\np for paper\nc for scissor")
-
-
-option=(input("Enter your choice please :\n"))
-dict={"s":1,"p":-1,"c":0}
-inp=dict[option]
-ReverseDict={1:"stone",-1:"paper",0:"scissor"}
+    
+def Play_game():
+    computer = random.choice([-1,0,1])
+    print("please press :\ns for stone\np for paper\nc for scissor")
 
 
-print(f"you choose :{ReverseDict[inp]}\ncomputer choose :{ReverseDict[computer]}\n")
+    option=(input("Enter your choice please :\n"))
+    dict={"s":1,"p":-1,"c":0}
+    inp=dict[option]
+    ReverseDict={1:"stone",-1:"paper",0:"scissor"}
+
+
+    print(f"you choose :{ReverseDict[inp]}\ncomputer choose :{ReverseDict[computer]}\n")
 
 
 
 #writing the mai body of code- the decision operators of the game 
-if(computer==inp):
-    print("IT'S A DRAW !!!")
-elif(computer==-1 and inp==0):
-    print("YOU WIN !!!\nCONGRATS !")
-elif(computer==-1 and inp==1):
-    print("YOU ARE DEFEATED !\n DON'T LET THIS HAPPEN AGAIN")
-elif(computer==1 and inp==0):
-    print("YOU ARE DEFEATED !\n DON'T LET THIS HAPPEN AGAIN")
-elif(computer==1 and inp==-1):
-    print("YOU WIN !!!\nCONGRATS !")
-elif(computer==0 and inp==-1):
-     print("YOU WIN !!!\nCONGRATS !")
-elif(computer==0 and inp==1):
-     print("YOU ARE DEFEATED !\n DON'T LET THIS HAPPEN AGAIN")
-else:
-    print("invalid input !!!!")
+    if(computer==inp):
+       print("IT'S A DRAW !!!")
+    elif(computer==-1 and inp==0):
+       print("YOU WIN !!!\nCONGRATS !")
+    elif(computer==-1 and inp==1):
+       print("YOU ARE DEFEATED !\n DON'T LET THIS HAPPEN AGAIN")
+    elif(computer==1 and inp==0):
+       print("YOU ARE DEFEATED !\n DON'T LET THIS HAPPEN AGAIN")
+    elif(computer==1 and inp==-1):
+       print("YOU WIN !!!\nCONGRATS !")
+    elif(computer==0 and inp==-1):
+       print("YOU WIN !!!\nCONGRATS !")
+    elif(computer==0 and inp==1):
+       print("YOU ARE DEFEATED !\n DON'T LET THIS HAPPEN AGAIN")
+    else:
+       print("invalid input !!!!")
     
+    
+def main():
+    while True :
+        Play_game()
+        end=(input("Do you want to play game again\npress 'y' to play :\n and 'n' to exit the game :"))
+        if end!='y':
+            print("thankyou for playing boss\nsee you soon")
+            break;
 
-
+if __name__ == "__main__":
+    main()
 
 
 
